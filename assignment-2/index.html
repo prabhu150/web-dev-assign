@@ -1,38 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to Vecta Corporation!</title> 
+	<title>Welcome to Vecta Corporation!</title>
+	<link rel="stylesheet" href="./styles.css">
+
 </head>
 
-<body style="width:960px;margin:0 20px;">
+<body>
+	<!-- Shifted inline styles to styles.css retaining their original values -->
 
 	<div class='header' onclick="location.href = './index.html'">
-		<img src="./images/header.gif"/>
+		<img src="./images/header.gif" id="banner" />
 	</div>
 
 	<div class="navbar">
-		<ul>
-			<li onclick="location.href = './index.html'">Home</li>
-			<li onclick="location.href = './aboutus.html'">About Us</li>
-			<li onclick="location.href = './solutions.html'">Solutions</li>
-			<li onclick="location.href = './contactus.html'">Contact Us</li>
+		<ul id='nav-list'>
+			<li class='nav-item' onclick="location.href = './index.html'"> <img src="./images/square_bulletv2.png" alt="bullet" class='square-bullet'>Home</li>
+			<li class='nav-item' onclick="location.href = './aboutus.html'"><img src="./images/square_bulletv2.png" alt="bullet" class='square-bullet'>About Us</li>
+			<li class='nav-item' onclick="location.href = './solutions.html'"><img src="./images/square_bulletv2.png" alt="bullet" class='square-bullet'>Solutions</li>
+			<li class='nav-item' onclick="location.href = './contactus.html'"><img src="./images/square_bulletv2.png" alt="bullet" class='square-bullet'>Contact Us</li>
 		</ul>
 	</div>
 
 
-	<div class='content'>
 
+	<div class="content">
+			<h2>Welcome</h2>
+
+			<p align='justify'>
+				With innovative approaches and advanced methodologies, Vecta Corporation provides scalable business solutions to
+				help companies achieve success through revenue increase, cost management, and user satisfaction. Our approach
+				stems from the three most important business growth aspects: helping companies reach prospects, assist in
+				converting prospects to customers, and assist in retaining those customers. This is accomplished through our
+				interactive solutions and expertise in providing a memorable and positive user experience.
+			</p>
+		
+		
+			<h2>Our Solutions </h2>
+		
+		
+			<p align='justify'>
+				
+				<img src="./images/logo_vprospect.gif" alt="prospect_logo" class='solution_logo'> <br/>
+				<b>vProspect 2.0</b> <br/>
+				Define and research your target audience, define your strategy to reach that audience and present a strong and
+				memorable brand to that audience.
+				<br/><br/>
+				
+				<img src="./images/logo_vconvert.gif" alt="convert_logo" class='solution_logo'><br/>
+				<b>vConvert 2.0</b> <br/>
+				Create a highly user-friendly and easy-to-navigate information architecture that will help your prospects
+				interact with the company on a highly interactive level.
+				<br/><br/>
+				
+				<img src="./images/logo_vretain.gif" alt="retain_logo" class='solution_logo'><br/>
+				<b>vRetain 1.0</b><br/>
+				Build on existing customer relationships to improve productivity and maximize customer loyalty, while growing
+				revenues.
+				<br/><br/>
+			</p>
+		
+		
+			<h2>Client Testimonials</h2>
+			<p align='justify'>
+				<i>
+				Throughout the years we have worked with Vecta Corporation, we have always been amazed at the level of
+				dedication and professionalism that they have provided us and our WGDC products. It is this commitment that has
+				increased both our income and exposure exponentially.
+				</i>
+			</p>
+		
+			<p>
+					Zak Ruvalcaba <br/>
+					Founder and CEO <br/>
+					<a href='http://www.modulemedia.com'>Module Media</a> <br/>
+			</p>
 
 	</div>
 
 
+	<hr />
 
-<hr/>
-
-<footer>
-	<p>Copyright 2016 - All Rights Reserved</p>
-</footer>
+	<footer>
+		<p>Copyright © 2016 - All Rights Reserved</p>
+	</footer>
 
 
 </body>
