@@ -4,7 +4,7 @@ This repo will be used for storing assignments for **CS 648**  _Modern Web Frame
 
 
 1. [Assignment 1](./assignment-1 "Simple HTML page")
-2. [Assignment 2](# "Coming soon!")
+2. [Assignment 2](./assignment-2 "Reproduce HTML webpages with CSS styles")
 3. [Assignment 3](# "Coming soon!")
 4. [Assignment 4](# "Coming soon!")
 5. [Assignment 5](# "Coming soon!")
