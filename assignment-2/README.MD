@@ -1,6 +1,6 @@
-# Assignment 2 : Reproduce HTML webpages with CSS styles
-
-For this assignment, I revisited HTML concepts like lists,links, images and fonts. I learnt how to bolden and italicize text content and how to add and resize images in the required format. 
+# Assignment 2 : Reproduce HTML webpages as required
+For this assignment, I revisited HTML concepts like lists,links, images and fonts. I reviewed all the tags and how to format them to
+get the webpage as required.
 
 These webpages are _reproduced_ from the screenshots as required from the problem statement.
 
