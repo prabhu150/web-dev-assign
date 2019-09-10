@@ -1,0 +1,62 @@
+/*
+Styles for part 1.
+*/
+
+
+body{
+    /* line height, font size, bgcolor */
+    font-family: "Arial", Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 2em;
+    background-color: #EDEDED;
+
+}
+
+h3{
+border-bottom: 1px solid #929CA4;
+color: crimson;
+}
+
+p:first-of-type::first-letter
+{
+    font-size: 30px;
+}
+
+.solution
+{
+    /* Stylize this class so that the text is #CC1C0D and the font weight should be bolded. Apply this class to each solution title within the “Our Solutions” section */
+    color: #CC1C0D;
+    font-weight: bold;
+}
+
+/* 
+Uniquely ID each of the two client testimonials. Call the first one testimonial1 and the second one testimonial2. Using a multiple element selector, 
+stylize both paragraphs to be italicized and indented in about 50px. 
+Use the margin property here to accomplish this task.
+*/
+
+#testimonial1,#testimonial2
+{
+    font-style: italic;
+    margin-left : 50px;
+}
+
+
+/* Link the Dorknozzle text to http://www.dorknozzle.com. Then, using an attribute selector, s
+elect the <a> element by its href attribute, but only if it has the “http” prefix associated with it. 
+If it does, use the 4 pseudo classes to set the unvisited, visited, active, and hover states to different colors and text decorations. */
+
+a:visited[href^="http://"]{
+   color:yellow;
+}
+a:hover[href^="http://"]{
+    color:blue;
+ }
+ a:active[href^="http://"]{
+    color:green;
+    
+ }
+a:link[href^="http://"]{
+    color:red;
+    text-decoration: none;
+ }
