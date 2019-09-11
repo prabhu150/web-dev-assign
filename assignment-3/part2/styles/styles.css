@@ -1,0 +1,45 @@
+
+/* Common Styles */
+
+body{
+    /* moved inline styles */
+    width:960px;
+    margin-left:20px;
+    font-family: "Arial", Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 2em;
+    background-color: #EDEDED;
+}
+a{
+    color: #CC1C0D;
+}
+
+h2{
+    padding : 10px;
+    color : #CC1C0D;
+    background-color: #DFE3E6;
+    border: 2px solid #929CA4;
+    border-radius: 8px;
+}
+
+ul:first-of-type{
+    list-style-type: none;
+    padding: 0;
+}
+
+.company_head{
+    border: 3px solid red;
+    border-radius: 50px;
+    margin: 0 10px 0 10px;
+    padding: 0;
+}
+
+img{
+    float: left;
+    padding : 10px 10px 10px 0;
+}
+
+section{
+    /* padding : 10px 0 10px 0; */
+}
+
