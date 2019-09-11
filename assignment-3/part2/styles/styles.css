@@ -37,9 +37,34 @@ ul:first-of-type{
 img{
     float: left;
     padding : 10px 10px 10px 0;
+    margin-right : 10px;
 }
 
 section{
     /* padding : 10px 0 10px 0; */
 }
+
+#vconvert,#vprospect,#vretain{
+    font-weight: bold;
+}
+
+div{
+    float : left;
+    margin: 0 20px 0 0;
+    vertical-align: super;
+    border: 1px solid gray;
+    border-radius: 5px;
+    text-align: center;
+    width: 20%;
+}
+
+br{
+
+}
+
+.pricing{
+    text-align: justify; 
+    clear: both; 
+}
+
 
