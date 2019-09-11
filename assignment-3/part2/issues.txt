@@ -1,0 +1,31 @@
+Added team member name to the same paragraph
+Seperate section for image and everything else
+Added a br tag after every section 
+
+
+Questions:
+
+1. Are minor modifications to HTML permitted? 
+2. In index.html under Solutions, how do I isolate the headings and only bold 
+those since those headings in question are within the same <p> tag as the 
+contents below? I understand you can use selectors (nth-of-type), but 
+it bolds the headings as well as everything below it. Assuming we cant modify
+HTML to have them both in two seperate <p> tags, I cant find any way to selectively
+bold a few items of the same tag and igore the rest.
+3. For pricing, since we have floating images inside floating divs, I am having trouble coming up
+with a way to center align those images, what I currently have is attached below. I am thinking of z-index or using
+some extra classes both of which are not permitted according to the assignment requirements. Could you point me in the
+right direction?
+4. In the same vein as 3., since we have an image for every solution other than 'Enterprise', the divider is tad off for the last one.
+Again since the images are floating, they dont take up the space the text does and hence the divider is in line. I cant find a way to make the 
+text not take up the space it does without either using z-index/extra class? Thoughts?
+5. For solutions.html, the navbar is different without any mention of this in the requirements stated above. I cant think of a way to achieve this without modifying the 
+html file and giving the sub list a seperate class for styles, since it requires indents as opposed to the other <ul>s for our original non-bulleted non-indented nav list. Is that what I am supposed to do?
+
+Possible modifications for future:
+
+1. I added an extra HR tag for getting the dividers.
+2. Added solutions css class for adding extra padding for the images and getting the enterprise text to float.
+3. Made a seperate para tag for enterprise text
+4. Removed padding for section selector on selector
+5. Made seperate paras for headings only for index.html

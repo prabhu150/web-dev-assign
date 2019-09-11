@@ -1,3 +1,0 @@
-Added team member name to the same paragraph
-Seperate section for image and everything else
-Added a br tag after every section 
