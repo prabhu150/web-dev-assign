@@ -16,20 +16,6 @@ color: crimson;
 }
 
 
-a[href^="http://"]:visited{
-    color:yellow;
-}
-
-a[href^="http://"]:hover{
-     color:purple;
-}
- 
- a[href^="http://"]:active{
-     color:green;
- }
- a[href^="http://"]:link{
-     text-decoration: none;
- }
 
 p:first-of-type::first-letter
 {
@@ -48,21 +34,32 @@ p:first-of-type::first-letter
     margin-left : 50px;
 }
 
+/* todo: visited looks buggy. Fix this */
 
-/* Link the Dorknozzle text to http://www.dorknozzle.com. Then, using an attribute selector, s
-elect the <a> element by its href attribute, but only if it has the “http” prefix associated with it. 
-If it does, use the 4 pseudo classes to set the unvisited, visited, active, and hover states to different colors and text decorations. 
-*/
+a[href^="http://"]:link{
+    /* over rides visited sometimes */
+    color : green;
+    text-decoration: none;
+}
 
 
+a[href^="http://"]:visited{
+    color:gray;
+    text-decoration: line-through;
+ }
+ 
+a[href^="http://"]:hover{
+    color:purple;
+    text-decoration: underline;
+}
 
- /* 
- Using a type selector, remove the bullets from the list in the management team.
-Using a pseudo-class selector, select the first item in the management team list and make it blue.
-Using a pseudo-class selector, select the last item in the management team list and make it red.
- */
+a[href^="http://"]:active{
+    color:goldenrod;
+    text-decoration: overline;
+}
 
- ul{
+
+ul{
      list-style-type: none;
  }
 
