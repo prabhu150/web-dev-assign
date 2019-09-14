@@ -20,6 +20,27 @@ h2 {
   border: 2px solid #929ca4;
   border-radius: 8px;
 }
+
+img {
+  float: left;
+  padding: 10px 10px 10px 0px;
+  margin-right: 10px;
+}
+
+div {
+  display: table-cell;
+  float: left;
+  margin: 0 0 20px 10px;
+  vertical-align: top;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  width: 23.5%;
+  height: fit-content;
+}
+
+/* Specific Styles */
+
 ul > ul {
   margin-left: 30px;
 }
@@ -37,14 +58,7 @@ section > img {
 }
 
 section > p {
-    margin-left: 20px;
-}
-
-
-img {
-  float: left;
-  padding: 10px 10px 10px 0px;
-  margin-right: 10px;
+  margin-left: 20px;
 }
 
 #vconvert,
@@ -53,29 +67,17 @@ img {
   font-weight: bold;
 }
 
-div {
-  display: table-cell;
-  float: left;
-  margin : 0 0 20px 10px;
-  vertical-align: top;
-  border: 1px solid gray;
-  border-radius: 5px;
-  text-align: center;
-  width: 23.5%;
-  height: fit-content;
-}
-
 .pricing > div > hr {
   margin-top: 90px;
   height: 10px;
 }
 
 .pricing {
-    text-align: center;
-    clear: both;
+  text-align: center;
+  clear: both;
 }
 .pricing > div:nth-of-type(1) > hr {
-  background: #cc1c0d ;
+  background: #cc1c0d;
 }
 
 .pricing > div:nth-of-type(2) > hr {
@@ -83,23 +85,20 @@ div {
 }
 
 .pricing > div:nth-of-type(3) > hr {
-  background:#685288;
+  background: #685288;
 }
 
-.pricing > div:nth-of-type(4) > hr  {
+.pricing > div:nth-of-type(4) > hr {
   background: black;
 }
 
-div > img{
+div > img {
   float: left;
   padding: 30px 0 0 80px;
-  margin : 0;
+  margin: 0;
 }
-div > p:nth-child(1)
-{   
-    float: left;
-    padding: 25px 0 0 50px;
-    margin : 0;
+div > p:nth-child(1) {
+  float: left;
+  padding: 35px 0 0 50px;
+  margin: 0;
 }
-
-

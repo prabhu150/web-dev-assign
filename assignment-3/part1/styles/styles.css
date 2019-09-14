@@ -2,71 +2,61 @@
 Styles for part 1.
 */
 
-
-body{
-    /* line height, font size, bgcolor */
-    font-family: "Arial", Helvetica, sans-serif;
-    font-size: 1em;
-    line-height: 2em;
-    background-color: #EDEDED;
+body {
+  /* line height, font size, bgcolor */
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 1em;
+  line-height: 2em;
+  background-color: #ededed;
 }
-h3{
-border-bottom: 1px solid #929CA4;
-color: crimson;
-}
-
-
-
-p:first-of-type::first-letter
-{
-    font-size: 30px;
+h3 {
+  border-bottom: 1px solid #929ca4;
+  color: crimson;
 }
 
-.solution
-{
-    color: #CC1C0D;
-    font-weight: bold;
+p:first-of-type::first-letter {
+  font-size: 30px;
 }
 
-#testimonial1,#testimonial2
-{
-    font-style: italic;
-    margin-left : 50px;
+.solution {
+  color: #cc1c0d;
+  font-weight: bold;
 }
 
-/* todo: visited looks buggy. Fix this */
-
-a[href^="http://"]:link{
-    /* over rides visited sometimes */
-    color : green;
-    text-decoration: none;
+#testimonial1,
+#testimonial2 {
+  font-style: italic;
+  margin-left: 50px;
 }
 
-
-a[href^="http://"]:visited{
-    color:gray;
-    text-decoration: line-through;
- }
- 
-a[href^="http://"]:hover{
-    color:purple;
-    text-decoration: underline;
+a[href^="http://"]:link {
+  color: green;
+  text-decoration: none;
 }
 
-a[href^="http://"]:active{
-    color:goldenrod;
-    text-decoration: overline;
+a[href^="http://"]:visited {
+  color: gray;
+  text-decoration: line-through;
 }
 
+a[href^="http://"]:hover {
+  color: purple;
+  text-decoration: underline;
+}
 
-ul{
-     list-style-type: none;
- }
+a[href^="http://"]:active {
+  color: goldenrod;
+  text-decoration: overline;
+}
 
- li:first-child{
-     color:blue;
- }
+ul {
+  list-style-type: none;
+}
 
- li:last-child{
-     color:red;
- }
+li:first-child {
+  color: blue;
+}
+
+li:last-child {
+  color: red;
+}
