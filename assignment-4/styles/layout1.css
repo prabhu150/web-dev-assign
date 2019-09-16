@@ -1,0 +1,43 @@
+body
+{
+    width: 960px;
+    margin: 20px auto 0 auto;
+}
+
+#grid-container {
+    display: grid;
+    height: 600px;
+    grid-template: repeat(4,300px) / repeat(8, 200px);
+    gap: 10px 5px;
+  }
+  
+#grid-container > div {
+    background-color: rgb(180, 175, 175);
+}
+
+#company_logo{
+grid-template-rows: 1/2;
+grid-template-columns: 1/2;
+}
+
+.items{
+    
+    align-self: center;
+    grid-template-rows: 1/2;
+    grid-template-columns: 4/8;
+
+}
+
+#product_image
+{
+    grid-template: 
+
+}
+
+.product{
+
+}
+
+#copyright_notice{
+
+}
