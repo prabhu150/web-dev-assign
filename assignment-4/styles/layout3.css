@@ -1,0 +1,48 @@
+main > * {
+  background: silver;
+}
+
+main {
+  display: grid;
+  width: 960px;
+  height: 900px;
+  margin: 20px auto 0 auto;
+  grid: 80px repeat(6, 1fr) 60px / repeat(12, 1fr);
+  gap: 25px;
+}
+
+header {
+  grid-area: 1 / 1 / 2 / span 3;
+}
+
+nav {
+  display: grid;
+  grid-area: 1 / 7 / 2 / 13;
+  align-self: center;
+  align-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(4, auto);
+  height: 50px;
+}
+
+footer {
+  grid-area: 8 / 1 / 9 / 13;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.content {
+  
+  grid-area: 2 / 1 / 4 / 13;
+}
+.gallery {
+  background: white;
+  display: grid;
+  grid-area: 4/1 / 8/13;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+}
+.exhibit {
+  background: silver;
+  size: auto;
+}

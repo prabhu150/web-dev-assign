@@ -1,43 +1,44 @@
-body
-{
-    width: 960px;
-    margin: 20px auto 0 auto;
+main > * {
+  background: silver;
 }
 
-#grid-container {
-    display: grid;
-    height: 600px;
-    grid-template: repeat(4,300px) / repeat(8, 200px);
-    gap: 10px 5px;
-  }
-  
-#grid-container > div {
-    background-color: rgb(180, 175, 175);
+main {
+  display: grid;
+  width: 960px;
+  height: 900px;
+  grid: 80px repeat(3, 1fr) 60px / repeat(12, 1fr);
+  gap: 25px;
+  margin: 20px auto 0 auto;
 }
 
-#company_logo{
-grid-template-rows: 1/2;
-grid-template-columns: 1/2;
+header {
+  grid-area: 1 / 1 / 2 / span 3;
 }
 
-.items{
-    
-    align-self: center;
-    grid-template-rows: 1/2;
-    grid-template-columns: 4/8;
-
+nav {
+  display: grid;
+  grid-area: 1 / 7 / 2 / 13;
+  align-self: center;
+  align-content: center;
+  justify-items: center;
+  grid-template-columns: repeat(4, auto);
+  height: 50px;
 }
 
-#product_image
-{
-    grid-template: 
-
+.product_image {
+  grid-area: 2 / 1 / 4 / span 12;
 }
 
-.product{
-
+.product1 {
+  grid-area: 4 / 1 / 5 / span 6;
 }
 
-#copyright_notice{
+.product2 {
+  grid-area: 4 / 7 / 5 / span 6;
+}
 
+footer {
+  grid-area: 5 / 1 / 6 / 13;
+  text-align: center;
+  padding-top: 10px;
 }
