@@ -1,18 +1,17 @@
-main > * {
+main>* {
   background: silver;
 }
 
 main {
   display: grid;
   width: 960px;
-  height: 900px;
-  grid: 80px repeat(3, 1fr) 60px / repeat(12, 1fr);
-  gap: 25px;
+  grid: repeat(10, 1fr) / repeat(12, 1fr);
+  gap: 15px;
   margin: 20px auto 0 auto;
 }
 
 header {
-  grid-area: 1 / 1 / 2 / span 3;
+  grid-area: 1 / 1 / 2 / 4;
 }
 
 nav {
@@ -26,19 +25,19 @@ nav {
 }
 
 .product_image {
-  grid-area: 2 / 1 / 4 / span 12;
+  grid-area: 2 / 1 / 7 / 13;
 }
 
 .product1 {
-  grid-area: 4 / 1 / 5 / span 6;
+  grid-area: 7 / 1 / 10 / span 6;
 }
 
 .product2 {
-  grid-area: 4 / 7 / 5 / span 6;
+  grid-area: 7 / 7 / 10 / span 6;
 }
 
 footer {
-  grid-area: 5 / 1 / 6 / 13;
+  grid-area: 10 / 1 / 11 / 13;
   text-align: center;
   padding-top: 10px;
 }
