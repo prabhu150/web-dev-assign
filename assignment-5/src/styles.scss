@@ -1,0 +1,23 @@
+@import "variables";
+@import "mixins";
+@import "navigations";
+
+$color : red;
+
+body                        {font-family: $body_font;font-size:1em;line-height:2em;background:$body_background;margin:0;}
+main                        {width:940px;margin:0 auto;padding:0 10px;}
+
+/* NAVIGATION */
+figure                      {width:400px;height:190px;background:url('../images/logo.png') no-repeat 0 50px;float:left;display:block;margin:0;}
+nav                         {width:540px;height:190px;float:left;text-align:right;}
+nav ul                      {list-style-type:none;margin-top:95px;}
+nav ul li                   {display:inline;font-size:0.8em;margin-right:10px;}
+nav ul li a                 {color:#E65C43;text-decoration:none;letter-spacing:-0.01em;}
+nav ul li a:hover           {color:#FFF;}
+
+/* HEADER */
+header                      {width:inherit;clear:both;text-align:center;padding-top:40px;}
+header img                  {max-width:100%;height:auto;}
+header h1                   {color:#E65C43;font-weight:100;font-size:4em;line-height:0;}
+header h2                   {color:#FFF;font-weight:900;font-size:2.5em;line-height:0;margin-bottom:70px;}
+header h3                   {color:#666;font-weight:400;font-size:2em;line-height:0;margin-bottom:50px;}

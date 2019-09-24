@@ -3,3 +3,6 @@
 .assignment-2/assets
 .assignment-2/*.docx
 .assignment-3/*.docx
+.assignment-4/problem-statement
+/assignment-5/node_modules
+/assignment-5/assets
