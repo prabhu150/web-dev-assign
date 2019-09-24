@@ -1,23 +1,172 @@
 @import "variables";
 @import "mixins";
-@import "navigations";
+@import "./modules/mediaqueries";
 
-$color : red;
+// Create a Sass nested rule for the navigation menu and child elements.
+body {
+  font-family: $body-font;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+  background: $body-background;
+  margin: $body-margin;
+}
+main {
+  width: $main-width;
+  margin: $main-margins;
+  padding: $main-padding;
+}
 
-body                        {font-family: $body_font;font-size:1em;line-height:2em;background:$body_background;margin:0;}
-main                        {width:940px;margin:0 auto;padding:0 10px;}
+figure {
+  width: $figure-width;
+  height: $figure-height;
+  background: $figure-image;
+  float: $figure-float;
+  display: $figure-display;
+  margin: $figure-margin;
+}
+nav {
+  width: $nav-width;
+  height: $nav-height;
+  float: $nav-float;
+  text-align: $nav-text-align;
 
-/* NAVIGATION */
-figure                      {width:400px;height:190px;background:url('../images/logo.png') no-repeat 0 50px;float:left;display:block;margin:0;}
-nav                         {width:540px;height:190px;float:left;text-align:right;}
-nav ul                      {list-style-type:none;margin-top:95px;}
-nav ul li                   {display:inline;font-size:0.8em;margin-right:10px;}
-nav ul li a                 {color:#E65C43;text-decoration:none;letter-spacing:-0.01em;}
-nav ul li a:hover           {color:#FFF;}
+  ul {
+    list-style-type: $ul-list-type;
+    margin-top: $ul-margin;
 
-/* HEADER */
-header                      {width:inherit;clear:both;text-align:center;padding-top:40px;}
-header img                  {max-width:100%;height:auto;}
-header h1                   {color:#E65C43;font-weight:100;font-size:4em;line-height:0;}
-header h2                   {color:#FFF;font-weight:900;font-size:2.5em;line-height:0;margin-bottom:70px;}
-header h3                   {color:#666;font-weight:400;font-size:2em;line-height:0;margin-bottom:50px;}
+    li {
+      display: inline;
+      font-size: 0.8em;
+      margin-right: 10px;
+
+      a {
+        color: $a-color;
+        text-decoration: $a-text-decoration;
+        letter-spacing: $a-letter-spacing;
+        &:hover {
+          color: $a-hover-color;
+        }
+      }
+    }
+  }
+}
+header {
+  width: inherit;
+  clear: both;
+  text-align: center;
+  padding-top: 40px;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h1 {
+    color: #e65c43;
+    font-weight: 100;
+    font-size: 4em;
+    line-height: 0;
+  }
+  h2 {
+    color: #fff;
+    font-weight: 900;
+    font-size: 2.5em;
+    line-height: 0;
+    margin-bottom: 70px;
+  }
+  h3 {
+    color: #666;
+    font-weight: 400;
+    font-size: 2em;
+    line-height: 0;
+    margin-bottom: 50px;
+  }
+}
+
+#headline {
+  width: 100%;
+  height: 130px;
+  background: #f25c43;
+  text-align: center;
+  margin: 0 auto;
+  h1 {
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 100;
+    padding-top: 50px;
+  }
+}
+
+#content {
+  width: 940px;
+  margin: 20px auto;
+
+  h3 {
+    color: #666;
+    font-size: 2em;
+    font-weight: 400;
+  }
+  #products {
+    width: 460px;
+    float: left;
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+    article {
+      margin-bottom: 40px;
+    }
+    h4 {
+      line-height: 1em;
+    }
+  }
+
+  #testimonials {
+    width: 460px;
+    float: right;
+  }
+}
+
+.greybar {
+  width: 100%;
+  height: 90px;
+  background: #f5f6f6;
+  clear: both;
+  padding-top: 30px;
+}
+
+footer {
+  width: 100%;
+  height: 120px;
+  background: #30353d;
+  text-align: center;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.social-media {
+  margin: 0 auto;
+  width: 165px;
+
+  div {
+    float: left;
+    margin-right: 5px;
+  }
+
+  a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-indent: -9999px;
+  }
+}
+
+/*
+
+
+.social-media div.one       {background:url('../images/social-media.png') 0 0;}
+.social-media div.two 	    {background:url('../images/social-media.png') -38px 0;}
+.social-media div.three     {background:url('../images/social-media.png') -76px 0;}
+.social-media div.four 	    {background:url('../images/social-media.png') -114px 0;}
+
+
+
+*/
