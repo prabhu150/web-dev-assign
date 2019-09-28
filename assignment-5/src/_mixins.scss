@@ -34,7 +34,7 @@
         }
     }
     @else if $screen == medium {
-        @media only screen and (min-width: $small-screen +1) and (max-width: $large-screen -1) {
+        @media only screen and (max-width: $medium-screen) {
             @content;
         }
     }
@@ -52,15 +52,7 @@
     } 
 }
 
-@mixin adjustItemsForMidScreen {
-  @include handleViewPort(medium) {
-    width: 96%;
-    margin: 0 2%;
-    float: none;
-  }
-}
-
-@mixin adjustContentForMidScreen{
+@mixin adjustItemsForMidScreen() {
   @include handleViewPort(medium) {
     width: 96%;
     margin: 0 2%;

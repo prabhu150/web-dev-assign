@@ -217,32 +217,24 @@ article img {
       line-height: $content-h4-line-ht;
     }
 
-    @include adjustContentForMidScreen();
+    @include adjustItemsForMidScreen();
 
     @include handleViewPort(large) {
       width: 46%;
       margin: 0 2%;
     }
-
-    
   }
 
   #testimonials {
-    @include adjustContentForMidScreen();
+    @include adjustItemsForMidScreen();
 
     @include handleViewPort(large) {
       width: 46%;
       margin: 0 2%;
     }
-    
+
     width: $testimonial-width;
     float: $testimonial-float;
-  }
-}
-
-%removeBigItems {
-  @include handleViewPort(small) {
-    display: none;
   }
 }
 
@@ -253,7 +245,6 @@ article img {
   clear: both;
   padding-top: $greybar-pad-top;
 }
-
 
 footer {
   @include size(100%, 120px);
@@ -273,10 +264,6 @@ footer {
     }
   }
 }
-
-
-
-
 
 .social-media {
   margin: $social-media-margin;

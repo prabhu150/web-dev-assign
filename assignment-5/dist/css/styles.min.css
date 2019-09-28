@@ -18,7 +18,7 @@ main {
   }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   main {
     width: 460px;
   }
@@ -110,7 +110,7 @@ nav ul li a:hover {
   color: #fff;
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   nav ul li {
     font-size: 0.8em;
     margin: 0 5px;
@@ -142,7 +142,7 @@ header img {
   }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   header img {
     margin-bottom: 100px;
   }
@@ -178,7 +178,7 @@ header h3 {
   }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   header h1 {
     font-size: 2em;
   }
@@ -196,7 +196,7 @@ header h3 {
   }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   header h2 {
     font-size: 1em;
   }
@@ -215,7 +215,7 @@ header h3 {
   }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   header h3 {
     font-size: 1.5em;
   }
@@ -243,7 +243,7 @@ header h3 {
   }
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   #headline h1 {
     font-size: 2em;
     padding-top: 50px;
@@ -284,7 +284,7 @@ header h3 {
   float: left;
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   #content #products {
     width: 96%;
     margin: 0 2%;
@@ -305,7 +305,7 @@ header h3 {
   line-height: 1em;
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   #content #products {
     width: 96%;
     margin: 0 2%;
@@ -325,7 +325,7 @@ header h3 {
   float: right;
 }
 
-@media only screen and (min-width: 460px) and (max-width: 959px -1) {
+@media only screen and (max-width: 767px) {
   #content #testimonials {
     width: 96%;
     margin: 0 2%;
