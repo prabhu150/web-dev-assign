@@ -12,3 +12,36 @@ Create a mixin similar to the break() mixin that we built in the exercises.
 This mixin should handle the media queries for the web page.
 All of the media queries within the page should also conform to Sass.
 */
+@import "variables";
+
+@mixin social-media-blocks($spacing, $blocks... ) {
+    
+    @for $i from 0 to length($blocks){
+        #{nth($blocks,$i + 1)}
+        {
+            background: $social_media_img $spacing*$i 0;
+        }
+    }
+}
+
+@mixin size($width,$height)
+{
+width : $width;
+height : $height;
+}
+
+@mixin headings($property, $styles...){
+    
+    #{$property}{
+
+    color: nth($styles,1);
+    font-weight: nth($styles,2);
+    font-size: nth($styles,3);
+    line-height: nth($styles,4);
+
+    @if length($styles) > 4{
+        margin-bottom: nth($styles,5)
+    }
+
+}
+}

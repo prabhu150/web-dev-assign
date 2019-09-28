@@ -1,29 +1,38 @@
 
 // fonts and text props
-$body-font : "Roboto", sans-serif;
+$roboto-sans-serif : "Roboto", sans-serif;
 $body-font-size : 1em ;
 $body-line-height : 2em ;
 $nav-text-align : right;
-$li-font-size : 0.8em;
+$nav-li-font-size : 0.8em;
 $a-text-decoration : none;
 $a-letter-spacing : -0.01em;
 $header-text-align : center;
 $header-h1-font-weight: 100;
 $header-h1-line-height: 0;
 $header-h1-font-size: 4em;
-
+$headline-font-size : 2.5em;
+$headline-font-wt :  100;
+$headline-padding-top: 50px;
+$content-h3-font-size : 2em;
+$content-h3-font-wt : 400;
 
 
 // margins and padding
 $body-margin : 0;
 $figure-margin : 0;
-$ul-margin:95px 0 0 0;
-$li-margin-right : 10px;
+$nav-ul-margin : 95px 0 0 0;
+$nav-li-margin-right : 10px;
 $header-padding: 40px 0 0 0;
+$greybar-pad-top: 30px;
+$footer-pad-top : 50px;
+$social-media-margin : 0 auto;
+$social-div-margin-right : 5px;
 
 // width, height
 $main-width : 940px; 
 $main-margins : 0 auto;
+$headline-margins : 0 auto;
 $nav-height : 190px;
 $nav-width : 540px;
 $figure-width : 400px;
@@ -32,41 +41,49 @@ $main-padding : 0 10px;
 $header-width : inherit;
 $header-img-max-width : 100%;
 $header-img-height : auto;
-
+$header-clear : both;
+$content-width : $main-width;
+$content-margins : 20px auto;
+$product-width : 460px;
+$content-img-margin-right : 20px;
+$content-article-margin-bottom : 40px;
+$content-h4-line-ht : 1em;
+$testimonial-width : 460px;
+$social-media-width : 165px;
 
 
 //float
 $nav-float : left;
 $figure-float : left;
-
+$product-float : left;
+$img-float : left;
+$testimonial-float: right;
+$social-div-float: left;
+$social-a-display: block;
 
 // display-style
 $figure-display : block;
-$li-display : inline;
+$nav-li-display : inline;
 
 
 // images
 $body-background : url('../images/bg.gif') #FFF repeat-x;
 $figure-image :url("../images/logo.png") no-repeat 0 50px;
-
+$social_media_img : url("../images/social-media.png");
 
 // extras
-$ul-list-type: none;
-$header_clear: both;
+$nav-ul-list-type: none;
+$social-a-text-indent : -9999px;
 
 // colors
 $background-color: red;
-$a-color : #e65c43;
-$a-hover-color : #fff;
-$header-h1-color:#e65c43;
-$header-h2-color:#fff;
-$header-h3-color:#666;
-$headline-bg-color :#f25c43;
-$headline-h1-color: #fff; 
-$content-h3-color: #666;
-$greybar-background-color: #f5f6f6;
-$foooter-background-color: #30353d;
-$footer-color: #fff;
+$orange : #e65c43;
+$white : #fff;
+$dark-orange :#f25c43;
+$dark-gray: #666;
+$ivory: #f5f6f6;
+$dim-gray: #30353d;
+
 
 
 

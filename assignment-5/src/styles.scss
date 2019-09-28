@@ -4,7 +4,7 @@
 
 // Create a Sass nested rule for the navigation menu and child elements.
 body {
-  font-family: $body-font;
+  font-family: $roboto-sans-serif;
   font-size: $body-font-size;
   line-height: $body-line-height;
   background: $body-background;
@@ -17,8 +17,7 @@ main {
 }
 
 figure {
-  width: $figure-width;
-  height: $figure-height;
+  @include size($figure-width, $figure-height);
   background: $figure-image;
   float: $figure-float;
   display: $figure-display;
@@ -31,142 +30,120 @@ nav {
   text-align: $nav-text-align;
 
   ul {
-    list-style-type: $ul-list-type;
-    margin-top: $ul-margin;
+    list-style-type: $nav-ul-list-type;
+    margin: $nav-ul-margin;
 
     li {
-      display: inline;
-      font-size: 0.8em;
-      margin-right: 10px;
+      display: $nav-li-display;
+      font-size: $nav-li-font-size;
+      margin-right: $nav-li-margin-right;
 
       a {
-        color: $a-color;
+        color: $orange;
         text-decoration: $a-text-decoration;
         letter-spacing: $a-letter-spacing;
         &:hover {
-          color: $a-hover-color;
+          color: $white;
         }
       }
     }
   }
 }
 header {
-  width: inherit;
-  clear: both;
-  text-align: center;
-  padding-top: 40px;
+  width: $header-width;
+  clear: $header-clear;
+  text-align: $header-text-align;
+  padding: $header-padding;
+
   img {
-    max-width: 100%;
-    height: auto;
+    max-width: $header-img-max-width;
+    height: $header-img-height;
   }
-  h1 {
-    color: #e65c43;
-    font-weight: 100;
-    font-size: 4em;
-    line-height: 0;
-  }
-  h2 {
-    color: #fff;
-    font-weight: 900;
-    font-size: 2.5em;
-    line-height: 0;
-    margin-bottom: 70px;
-  }
-  h3 {
-    color: #666;
-    font-weight: 400;
-    font-size: 2em;
-    line-height: 0;
-    margin-bottom: 50px;
-  }
+
+  @include headings(h1, $orange, 100, 4em, 0);
+  @include headings(h2, $white, 900, 2.5em, 0, 70px);
+  @include headings(h3, $dark-gray, 400, 2em, 0, 50px);
 }
 
 #headline {
-  width: 100%;
-  height: 130px;
-  background: #f25c43;
-  text-align: center;
-  margin: 0 auto;
+  @include size(100%, 130px);
+  background: $dark-orange;
+  text-align: $header-text-align;
+  margin: $headline-margins;
   h1 {
-    color: #fff;
-    font-size: 2.5em;
-    font-weight: 100;
-    padding-top: 50px;
+    color: $white;
+    font-size: $headline-font-size;
+    font-weight: $headline-font-wt;
+    padding-top: $headline-padding-top;
   }
 }
 
 #content {
-  width: 940px;
-  margin: 20px auto;
+  width: $content-width;
+  margin: $content-margins;
 
   h3 {
-    color: #666;
-    font-size: 2em;
-    font-weight: 400;
+    color: $dark-gray;
+    font-size: $content-h3-font-size;
+    font-weight: $content-h3-font-wt;
   }
+
   #products {
-    width: 460px;
-    float: left;
+    width: $product-width;
+    float: $product-float;
+
     img {
-      float: left;
-      margin-right: 20px;
+      float: $img-float;
+      margin-right: $content-img-margin-right;
     }
     article {
-      margin-bottom: 40px;
+      margin-bottom:$content-article-margin-bottom;
     }
     h4 {
-      line-height: 1em;
+      line-height: $content-h4-line-ht;
     }
   }
 
   #testimonials {
-    width: 460px;
-    float: right;
+    width: $testimonial-width;
+    float: $testimonial-float;
   }
 }
 
 .greybar {
-  width: 100%;
-  height: 90px;
-  background: #f5f6f6;
+  @include size(100%, 90px);
+  background: $ivory;
   clear: both;
-  padding-top: 30px;
+  padding-top: $greybar-pad-top;
 }
 
 footer {
-  width: 100%;
-  height: 120px;
-  background: #30353d;
+  @include size(100%, 120px);
+  background: $dim-gray;
   text-align: center;
-  color: #fff;
-  padding-top: 50px;
+  color: $white;
+  padding-top: $footer-pad-top;
 }
 
 .social-media {
-  margin: 0 auto;
-  width: 165px;
+  margin: $social-media-margin;
+  width: $social-media-width;
+  @include social-media-blocks(
+    -38px,
+    "div.one",
+    "div.two",
+    "div.three",
+    "div.four"
+  );
 
   div {
-    float: left;
-    margin-right: 5px;
+    float: $social-div-float;
+    margin-right: $social-div-margin-right;
   }
 
   a {
-    display: block;
-    width: 36px;
-    height: 36px;
-    text-indent: -9999px;
+    display: $social-a-display;
+    @include size(36px, 36px);
+    text-indent: $social-a-text-indent;
   }
 }
-
-/*
-
-
-.social-media div.one       {background:url('../images/social-media.png') 0 0;}
-.social-media div.two 	    {background:url('../images/social-media.png') -38px 0;}
-.social-media div.three     {background:url('../images/social-media.png') -76px 0;}
-.social-media div.four 	    {background:url('../images/social-media.png') -114px 0;}
-
-
-
-*/

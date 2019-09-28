@@ -88,7 +88,7 @@ nav {
 
 nav ul {
   list-style-type: none;
-  margin-top: 95px 0 0 0;
+  margin: 95px 0 0 0;
 }
 
 nav ul li {
@@ -111,7 +111,7 @@ header {
   width: inherit;
   clear: both;
   text-align: center;
-  padding-top: 40px;
+  padding: 40px 0 0 0;
 }
 
 header img {
@@ -213,6 +213,22 @@ footer {
   width: 165px;
 }
 
+.social-media div.one {
+  background: url("../images/social-media.png") 0px 0;
+}
+
+.social-media div.two {
+  background: url("../images/social-media.png") -38px 0;
+}
+
+.social-media div.three {
+  background: url("../images/social-media.png") -76px 0;
+}
+
+.social-media div.four {
+  background: url("../images/social-media.png") -114px 0;
+}
+
 .social-media div {
   float: left;
   margin-right: 5px;
@@ -224,15 +240,3 @@ footer {
   height: 36px;
   text-indent: -9999px;
 }
-
-/*
-
-
-.social-media div.one       {background:url('../images/social-media.png') 0 0;}
-.social-media div.two 	    {background:url('../images/social-media.png') -38px 0;}
-.social-media div.three     {background:url('../images/social-media.png') -76px 0;}
-.social-media div.four 	    {background:url('../images/social-media.png') -114px 0;}
-
-
-
-*/
