@@ -1,47 +1,69 @@
-/*
-Create at least 3 Sass mixins for all of the 
-generic boxes including logo, 
-navigation menu, header, 
-content areas, and footer. 
-Your mixins should also contain d
-efault parameters for the properties that you are setting within the mixin.
-
-Use a math operation somewhere in your code.
-
-Create a mixin similar to the break() mixin that we built in the exercises. 
-This mixin should handle the media queries for the web page.
-All of the media queries within the page should also conform to Sass.
-*/
 @import "variables";
 
-@mixin social-media-blocks($spacing, $blocks... ) {
-    
-    @for $i from 0 to length($blocks){
-        #{nth($blocks,$i + 1)}
-        {
-            background: $social_media_img $spacing*$i 0;
+@mixin social-media-blocks($spacing, $blocks...) {
+  @for $i from 0 to length($blocks) {
+    #{nth($blocks,$i + 1)} {
+      background: $social_media_img $spacing * $i 0; // math operation
+    }
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin headings($property, $styles...) {
+  #{$property} {
+    color: nth($styles, 1);
+    font-weight: nth($styles, 2);
+    font-size: nth($styles, 3);
+    line-height: nth($styles, 4);
+
+    @if length($styles) > 4 {
+      margin-bottom: nth($styles, 5);
+    }
+  }
+}
+
+@mixin handleViewPort($screen : $medium-screen)
+{
+    @if $screen == small {
+        @media only screen and (max-width:$small-screen) {
+            @content;
+        }
+    }
+    @else if $screen == medium {
+        @media only screen and (min-width: $small-screen +1) and (max-width: $large-screen -1) {
+            @content;
+        }
+    }
+    @else if $screen == large { 
+        @media only screen and (max-width: $large-screen){
+            @content;
         }
     }
 }
 
-@mixin size($width,$height)
+@mixin clearScreen()
 {
-width : $width;
-height : $height;
+    @include handleViewPort(small) {
+    display : none;
+    } 
 }
 
-@mixin headings($property, $styles...){
-    
-    #{$property}{
-
-    color: nth($styles,1);
-    font-weight: nth($styles,2);
-    font-size: nth($styles,3);
-    line-height: nth($styles,4);
-
-    @if length($styles) > 4{
-        margin-bottom: nth($styles,5)
-    }
-
+@mixin adjustItemsForMidScreen {
+  @include handleViewPort(medium) {
+    width: 96%;
+    margin: 0 2%;
+    float: none;
+  }
 }
+
+@mixin adjustContentForMidScreen{
+  @include handleViewPort(medium) {
+    width: 96%;
+    margin: 0 2%;
+    float: none;
+  }
 }
