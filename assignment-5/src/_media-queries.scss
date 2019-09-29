@@ -1,0 +1,44 @@
+// This mixin will handle each screen size that is specified for it.
+// It will display content only when the browser dimensions match the screen size
+// we specify before hand. Thus it resizes as per changing requirements.
+// This is similar to break mixin, however I have used conditional logic to handle all screen-sizes
+// medium-screen is picked as default parameter
+
+@mixin handleViewPort($screen : $medium-screen)
+{
+    @if $screen == small {
+        @media only screen and (max-width:$small-screen) {
+            @content;
+        }
+    }
+    @else if $screen == medium {
+        @media only screen and (max-width: $medium-screen) {
+            @content;
+        }
+    }
+    @else if $screen == large { 
+        @media only screen and (max-width: $large-screen){
+            @content;
+        }
+    }
+}
+// This mixin will clear the contents of its selector when
+// the browser gets too small. Similar to break() mixin in the sense that we hide objects if they get too small.
+// Small is default since in most situations we have to clear the objects
+// if browser gets too small.
+@mixin clearScreen($screen : small)
+{
+    @include handleViewPort($screen) {
+    display : none;
+    } 
+}
+// It adjusts items for medium screen when browser goes from
+// large screen to medium screen.
+// Default parameter : medium.
+@mixin fitContent($screen : medium) {
+  @include handleViewPort($screen) {
+    width: 96%;
+    margin: 0 2%;
+    float: none;
+  }
+}

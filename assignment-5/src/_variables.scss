@@ -1,89 +1,86 @@
-// screen dimensions
-
-$small-screen : 459px;
-$medium-screen : 767px;
-$large-screen : 959px;
+// screen dimensions for handling each scene
+$small-screen: 459px;
+$medium-screen: 767px;
+$large-screen: 959px;
 
 // fonts and text props
-$roboto-sans-serif : "Roboto", sans-serif;
-$body-font-size : 1em ;
-$body-line-height : 2em ;
-$nav-text-align : right;
-$nav-li-font-size : 0.8em;
-$a-text-decoration : none;
-$a-letter-spacing : -0.01em;
-$header-text-align : center;
+$roboto-sans-serif: "Roboto", sans-serif;
+$body-font-size: 1em;
+$body-line-height: 2em;
+$nav-text-align: right;
+$nav-li-font-size: 0.8em;
+$a-text-decoration: none;
+$a-letter-spacing: -0.01em;
+$header-text-align: center;
 $header-h1-font-weight: 100;
 $header-h1-line-height: 0;
 $header-h1-font-size: 4em;
-$headline-font-size : 2.5em;
-$headline-font-wt :  100;
+$headline-font-size: 2.5em;
+$headline-font-wt: 100;
 $headline-padding-top: 50px;
-$content-h3-font-size : 2em;
-$content-h3-font-wt : 400;
-
+$content-h3-font-size: 2em;
+$content-h3-font-wt: 400;
 
 // margins and padding
-$body-margin : 0;
-$figure-margin : 0;
-$nav-ul-margin : 95px 0 0 0;
-$nav-li-margin-right : 10px;
+$body-margin: 0;
+$figure-margin: 0;
+$nav-ul-margin: 95px 0 0 0;
+$nav-li-margin-right: 10px;
 $header-padding: 40px 0 0 0;
 $greybar-pad-top: 30px;
-$footer-pad-top : 50px;
-$social-media-margin : 0 auto;
-$social-div-margin-right : 5px;
+$footer-pad-top: 50px;
+$social-media-margin: 0 auto;
+$social-div-margin-right: 5px;
+$social-div-spacing: -38px;
 
-// width, height
-$main-width : 940px; 
-$main-margins : 0 auto;
-$headline-margins : 0 auto;
-$nav-height : 190px;
-$nav-width : 540px;
-$figure-width : 400px;
-$figure-height : 190px;
-$main-padding : 0 10px;
-$header-width : inherit;
-$header-img-max-width : 100%;
-$header-img-height : auto;
-$header-clear : both;
-$content-width : $main-width;
-$content-margins : 20px auto;
-$product-width : 460px;
-$content-img-margin-right : 20px;
-$content-article-margin-bottom : 40px;
-$content-h4-line-ht : 1em;
-$testimonial-width : 460px;
-$social-media-width : 165px;
-
+// widths, heights
+$main-width: 940px;
+$main-margins: 0 auto;
+$headline-margins: 0 auto;
+$nav-height: 190px;
+$nav-width: 540px;
+$figure-width: 400px;
+$figure-height: 190px;
+$main-padding: 0 10px;
+$header-width: inherit;
+$header-img-max-width: 100%;
+$header-img-height: auto;
+$content-width: $main-width;
+$content-margins: 20px auto;
+$product-width: 460px;
+$content-img-margin-right: 20px;
+$content-article-margin-bottom: 40px;
+$content-h4-line-ht: 1em;
+$testimonial-width: 460px;
+$social-media-width: 165px;
 
 //float
-$nav-float : left;
-$figure-float : left;
-$product-float : left;
-$img-float : left;
+$nav-float: left;
+$figure-float: left;
+$product-float: left;
+$img-float: left;
 $testimonial-float: right;
 $social-div-float: left;
 $social-a-display: block;
 
 // display-style
-$figure-display : block;
-$nav-li-display : inline;
+$figure-display: block;
+$nav-li-display: inline;
 
-
-// images
-$body-background : url('../images/bg.gif') #FFF repeat-x;
-$figure-image :url("../images/logo.png") no-repeat 0 50px;
-$social_media_img : url("../images/social-media.png");
+// image urls
+$body-background: url("../images/bg.gif") #fff repeat-x;
+$figure-image: url("../images/logo.png") no-repeat 0 50px;
+$social_media_img: url("../images/social-media.png");
 
 // extras
 $nav-ul-list-type: none;
-$social-a-text-indent : -9999px;
+$social-a-text-indent: -9999px;
+$header-clear: both;
 
 // colors
-$orange : #e65c43;
-$white : #fff;
-$dark-orange :#f25c43;
+$orange: #e65c43;
+$white: #fff;
+$dark-orange: #f25c43;
 $dark-gray: #666;
 $ivory: #f5f6f6;
 $dim-gray: #30353d;

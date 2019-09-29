@@ -1,14 +1,22 @@
 @import "variables";
 
-@mixin social-media-blocks($spacing, $blocks...) {
+// Takes all the div blocks it needs and fills it with the image and spacing that we specify.
+@mixin social-media-blocks($blocks...) {
   @for $i from 0 to length($blocks) {
     #{nth($blocks,$i + 1)} {
-      background: $social_media_img $spacing * $i 0; // math operation
+      background: $social_media_img ($social-div-spacing * $i) 0; // math operation for dynamic spacing between every element.
     }
   }
 }
 
-@mixin size($width, $height) {
+// pick default values from variables.scss
+@mixin navbarPositioning($float : $nav-float,$text-align : $nav-text-align){
+  float: $nav-float;
+  text-align: $nav-text-align;
+}
+
+// By default, both are set to auto if one is not defined.
+@mixin size($width : auto, $height : auto) {
   width: $width;
   height: $height;
 }
@@ -23,39 +31,5 @@
     @if length($styles) > 4 {
       margin-bottom: nth($styles, 5);
     }
-  }
-}
-
-@mixin handleViewPort($screen : $medium-screen)
-{
-    @if $screen == small {
-        @media only screen and (max-width:$small-screen) {
-            @content;
-        }
-    }
-    @else if $screen == medium {
-        @media only screen and (max-width: $medium-screen) {
-            @content;
-        }
-    }
-    @else if $screen == large { 
-        @media only screen and (max-width: $large-screen){
-            @content;
-        }
-    }
-}
-
-@mixin clearScreen()
-{
-    @include handleViewPort(small) {
-    display : none;
-    } 
-}
-
-@mixin adjustItemsForMidScreen() {
-  @include handleViewPort(medium) {
-    width: 96%;
-    margin: 0 2%;
-    float: none;
   }
 }
