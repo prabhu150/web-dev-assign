@@ -3,7 +3,7 @@
 // we specify before hand. Thus it resizes as per changing requirements.
 // This is similar to break mixin, however I have used conditional logic to handle all screen-sizes
 // medium-screen is picked as default parameter
-@mixin handleViewPort($screen)
+@mixin handleViewPort($screen:$medium)
 {
     
     @if ($screen==$small) {
