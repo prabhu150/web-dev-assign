@@ -1,5 +1,5 @@
 // This ordering is important, since mixins/media queries must be defined before being used
 @import "variables"; // stores most of the values for colors/img-urls/margins-paddings/width-heights/font-sizes etc
-@import "media-queries"; // stores a mixin for controlling media objects as per browser dimensions
 @import "mixins"; // stores the mixins
+@import "media-queries"; // stores a mixin for controlling media objects as per browser dimensions
 @import "base"; // where most of the heavy lifing happens

@@ -7,24 +7,25 @@ body {
   margin: $body-margin; 
 }
 main {
+  
+  @include handleViewPort($large) {
+    width: 768px;
+  }
+  @include handleViewPort($medium) {
+    width: 460px;
+  }
+  @include handleViewPort($small) {
+    width: 300px;
+  }
+  
   width: $main-width;
   margin: $main-margins;
   padding: $main-padding;
 
-  @include handleViewPort(small) {
-    width: 300px;
-  }
-
-  @include handleViewPort(medium) {
-    width: 460px;
-  }
-  @include handleViewPort(large) {
-    width: 768px;
-  }
 }
 
 select {
-  @include handleViewPort(small) {
+  @include handleViewPort($small) {
     width: 95%;
   }
 }
@@ -37,36 +38,37 @@ figure {
 
   @include size($figure-width, $figure-height);
 
-  @include handleViewPort(small) {
-    background-size: contain;
-    height: 100px;
-  }
-  @include handleViewPort(large) {
+  @include handleViewPort($large) {
     width: inherit;
     height: 140px;
     float: none;
     background-position: center;
   }
+  @include handleViewPort($small) {
+    background-size: contain;
+    height: 100px;
+  }
+  
 }
 nav {
   @include size($nav-width, $nav-height); // defined a mixin for width/ht since we define it multiple times already.
   @include navbarPositioning(); // this mixin makes it easy to change the positioning of navbar.
 
-  @include handleViewPort(small) {
-    margin-bottom: 40px !important;
-  }
-
-  @include handleViewPort(large) {
+  @include handleViewPort($large) {
     width: inherit;
     height: 50px;
     float: none;
     text-align: center;
   }
 
+  @include handleViewPort($small) {
+    margin-bottom: 40px !important;
+  }
+
   ul {
     list-style-type: $nav-ul-list-type;
     margin: $nav-ul-margin;
-    @include handleViewPort(large) {
+    @include handleViewPort($large) {
       margin-top: 0;
     }
     li {
@@ -83,14 +85,15 @@ nav {
         }
       }
 
-      @include handleViewPort(medium) {
-        font-size: 0.8em;
-        margin: 0 5px;
-      }
-      @include handleViewPort(large) {
+      @include handleViewPort($large) {
         font-size: 1em;
         margin: 0 10px;
       }
+      @include handleViewPort($medium) {
+        font-size: 0.8em;
+        margin: 0 5px;
+      }
+      
     }
   }
 }
@@ -106,12 +109,13 @@ header {
     max-width: $header-img-max-width;
     height: $header-img-height;
 
-    @include handleViewPort(small) {
-      margin-bottom: 80px;
-    }
-    @include handleViewPort(medium) {
+    @include handleViewPort($medium) {
       margin-bottom: 100px;
     }
+    @include handleViewPort($small) {
+      margin-bottom: 80px;
+    }
+    
   }
 
   // Since all the boxes share common properties with variable 
@@ -123,41 +127,43 @@ header {
 
   h1 {
     &:first-child {
-      @include handleViewPort(small) {
+      @include handleViewPort($small) {
         font-size: 1.4em;
         margin-bottom: 20px;
       }
     }
 
-    @include handleViewPort(medium) {
-      font-size: 2em;
-    }
-    @include handleViewPort(large) {
+    
+    @include handleViewPort($large) {
       font-size: 3em;
+    }
+
+    @include handleViewPort($medium) {
+      font-size: 2em;
     }
   }
 
   h2 {
-    @include handleViewPort(small) {
-      font-size: 1.4em;
+    @include handleViewPort($large) {
+      font-size: 1.5em;
     }
-
-    @include handleViewPort(medium) {
+    @include handleViewPort($medium) {
       font-size: 1em;
     }
-    @include handleViewPort(large) {
-      font-size: 1.5em;
+    @include handleViewPort($small) {
+      font-size: 1.4em;
     }
   }
 
   h3 {
-    @include handleViewPort(small) {
+    @include handleViewPort($medium) {
+      font-size: 1.5em;
+    }
+    @include handleViewPort($small) {
       color: #fff;
       font-size: 1em;
     }
-    @include handleViewPort(medium) {
-      font-size: 1.5em;
-    }
+    
   }
 }
 
@@ -172,26 +178,25 @@ header {
     font-weight: $headline-font-wt;
     padding-top: $headline-padding-top;
 
-    @include handleViewPort(small) {
-      font-size: 1.5em;
-      padding-top: 30px;
-    }
-
-    @include handleViewPort(medium) {
+    @include handleViewPort($medium) {
       font-size: 2em;
       padding-top: 50px;
+    }
+    @include handleViewPort($small) {
+      font-size: 1.5em;
+      padding-top: 30px;
     }
   }
 }
 
 article img {
-  @include clearScreen(small); // disappear if screen gets too small.
+  @include clearScreen($small); // disappear if screen gets too $small.
 }
 #content {
   width: $content-width;
   margin: $content-margins;
 
-  @include handleViewPort(large) {
+  @include handleViewPort($large) {
     width: inherit;
   }
 
@@ -199,7 +204,7 @@ article img {
     color: $dark-gray;
     font-size: $content-h3-font-size;
     font-weight: $content-h3-font-wt;
-    @include handleViewPort(small) {
+    @include handleViewPort($small) {
       font-size: 1.6em;
     }
   }
@@ -209,8 +214,7 @@ article img {
     float: $product-float;
     // since this media query occurs for multiple items
     // I defined a mixin for it.
-    @include fitContent(medium);
-
+    
     img {
       float: $img-float;
       margin-right: $content-img-margin-right;
@@ -222,16 +226,17 @@ article img {
       line-height: $content-h4-line-ht;
     }
 
-    @include handleViewPort(large) {
+    @include handleViewPort($large) {
       width: 46%;
       margin: 0 2%;
     }
+    @include fitContent($medium);
   }
 
   #testimonials {
     
     @include fitContent();
-    @include handleViewPort(large) {
+    @include handleViewPort($large) {
       width: 46%;
       margin: 0 2%;
     }
@@ -255,12 +260,12 @@ footer {
   text-align: center;
   color: $white;
   padding-top: $footer-pad-top;
-  @include handleViewPort(small) {
+  @include handleViewPort($small) {
     text-align: center;
   }
   p,
   img {
-    @include handleViewPort(small) {
+    @include handleViewPort($small) {
       float: none;
       margin: 0;
     }
@@ -273,6 +278,8 @@ footer {
 
   // Adding additional social media icons becomes easy simply define
   // additional div blocks and modify the spacing inside variables files.
+
+  
   @include social-media-blocks(
     "div.one",
     "div.two",
