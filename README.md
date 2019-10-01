@@ -8,7 +8,7 @@ This repo will be used for storing assignments for **CS 648**  _Modern Web Frame
 3. [Assignment 3](./assignment-3 "CSS3 Selectors and Classes!")
 4. [Assignment 4](./assignment-4 "Grid Layouts!")
 5. [Assignment 5](./assignment-5 "Gulp & SASS!")
-6. [Assignment 6](# "Coming soon!")
+6. [Assignment 6](./assignment-6 "Intro to Javascript!")
 7. [Assignment 7](# "Coming soon!")
 8. [Assignment 8](# "Coming soon!")
 9. [Assignment 9](# "Coming soon!")
