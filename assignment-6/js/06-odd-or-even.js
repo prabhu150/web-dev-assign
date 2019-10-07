@@ -13,3 +13,4 @@ for(var i = start; i <= end; i++)
 let result = i&1 ? "odd" : "even";
 console.log(`${i} is ${result}`)
 }
+document.write("Results printed in console.")

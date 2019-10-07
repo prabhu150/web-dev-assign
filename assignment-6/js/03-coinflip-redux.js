@@ -12,3 +12,4 @@ coinFlip = Math.round(Math.random());
 let result = coinFlip == 0 ? "Heads" : "Tails";
 console.log(result)
 }
+document.write("Results printed in console.")

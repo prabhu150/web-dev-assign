@@ -8,7 +8,7 @@ for(var i = start; i <= end; i++)
 {
     let result 
 
-    if (i% 15 == 0)
+    if (i% 5 == 0 && i% 3 == 0)
     {
     result = "Marco!Polo!"    
     }
@@ -24,6 +24,6 @@ for(var i = start; i <= end; i++)
     {result = i};
 
     console.log(result + '\n')
-    document.write(result + '\n') // unclear whether to print on console/browser.
+    document.write(result + '<br/>') // unclear whether to print on console/browser.
 
 }

@@ -12,3 +12,4 @@ do {
     result = coinFlip == 0 ? "Heads" : "Tails";
     console.log(result)
 }while(result == "Heads");
+document.write("Results printed in console.")
