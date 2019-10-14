@@ -25,4 +25,7 @@ function fixAllButtons() {
     .addEventListener("click", this.button_click);
 }
 
+
+window.addEventListener("load",fixAllButtons);
+
 // window.onload = fixAllButtons; // STEP 5 this line can be included in index.html as well
