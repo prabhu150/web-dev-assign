@@ -60,6 +60,7 @@ function updateInventory() {
   );
 
   if (!Number.isNaN(skuNumber)) {
+
     let products = productList.filter(
       currentProduct => currentProduct[0] == skuNumber
     );
@@ -72,9 +73,13 @@ function updateInventory() {
       );
       return;
     }
-    let newStockQuantity = parseInt(window.prompt("Enter new stock quantity!"));
-    products[productList.indexOf(products[0])][2] = newStockQuantity;
 
+    let newStockQuantity = parseInt(window.prompt("Enter new stock quantity!"));
+    
+    let item = productList.indexOf(products[0])
+    console.log("Updating item number",item)
+    productList[item][2] = newStockQuantity;
+    
     console.log(
       `Item: ${skuNumber} Quantity: ${newStockQuantity} \n Updated Successfully!`
     );
