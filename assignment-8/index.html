@@ -9,39 +9,18 @@
 </head>
 
 <body>
-
-    
     <h2>Employee Management System</h2>
-
     <h3>Add Employee</h3>
     <form action="#" method="get" id="employee-form">
-        <input type="text" id="Name" placeholder="Enter Name"><br>
-        <input type="text" id="Title" placeholder="Enter Title"><br>
-        <input type="text" id="Extension" placeholder="Enter Extension"><br>
-        <button type="submit">Add</button>
+        <input type="text" id="name" placeholder="Enter Name"><span class="hidden" id="name-error">*Please enter
+            Name!</span><br>
+        <input type="text" id="title" placeholder="Enter Title"><span class="hidden" id="title-error">*Please enter
+            Title!</span><br>
+        <input type="text" id="extension" placeholder="Enter Extension"><span class="hidden"
+            id="extension-error">*Please enter valid (numeric) Extension!</span><br>
+        <button id="add-button" type="submit">Add</button>
     </form>
-
     <h3 id="numEmployees">Showing x employees</h3>
-
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Extension</th>
-            <th></th>
-        </tr>
-
-        <tr>
-            <td>xyz</td>
-            <td>xyz</td>
-            <td>xyz</td>
-            <td><button id="delete">Delete</button></td>
-        </tr>
-
-    </table>
-
-
+    <table id='EmployeeList'></table>
 </body>
-
 </html>
