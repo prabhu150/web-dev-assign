@@ -34,19 +34,20 @@ whenever an employee is deleted.
 */
 function populateTable() {
   console.log(`Loading ${employeeList.length} employees`);
-  var table = $("employeeList");
+  var table = $("employeeList"),index=0;
 
   updateCount();
 
   table.innerHTML = header;
 
-  for (let employee of employeeList) {
-    table.innerHTML += `<tr><td>${employee[0]}</td><td>${employee[1]}</td><td>${
+  for (var employee of employeeList) {
+    table.innerHTML += `<tr class=\"${index%2 ? "odd-rows" : "even-rows"}\"><td>${employee[0]}</td><td>${employee[1]}</td><td>${
       employee[2]
     }</td>
 <td><button class= "deleteEmployee" id=\"${
       employee[2]
     }\">Delete</button></td></tr>`;
+    index++;
   }
   updateButtonListeners();
 }
