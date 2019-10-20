@@ -46,7 +46,7 @@ button {
 }
 
 button:hover {
-  background-color: skyblue;
+  background-color: blueviolet;
   color: yellow;
   font-weight: bolder;
 }

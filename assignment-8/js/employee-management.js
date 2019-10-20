@@ -60,7 +60,7 @@ function addEmployee(employee) {
   var table = $("employeeList");
   employeeList[employeeList.length] = employee;
   updateCount();
-  table.innerHTML += `<tr><td>${employee[0]}</td><td>${employee[1]}</td><td>${
+  table.innerHTML += `<tr class=\"${employeeList.length%2 ? "even-rows":"odd-rows"}\"><td>${employee[0]}</td><td>${employee[1]}</td><td>${
     employee[2]
   }</td>
   <td><button class= "deleteEmployee" id=\"${
