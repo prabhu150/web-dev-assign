@@ -10,41 +10,126 @@
 
     <script type="text/javascript">
         $("document").ready(() => {
+            /*
+            var submitCount = 1;
 
-            var buttonCount = 1;
-
-            function createButton() {
-                $("body").append(`<button id=\'button-${buttonCount}'\> Button ${buttonCount}</button><br/>`)
-                buttonCount += 1
+            function createsubmit() {
+                $("body").append(`<submit id=\'submit-${submitCount}'\> submit ${submitCount}</submit><br/>`)
+                submitCount += 1
             }
 
             function alertUser() {
-                alert("Button clicked!")
+                alert("submit clicked!")
             }
 
-            createButton()
-            $("#button-1").click(alertUser)
+            createsubmit()
+            $("#submit-1").click(alertUser)
 
-            createButton()
-            $("#button-2").bind("click", alertUser)
+            createsubmit()
+            $("#submit-2").bind("click", alertUser)
 
-            createButton()
-            $("#button-3").on("click", alertUser)
+            createsubmit()
+            $("#submit-3").on("click", alertUser)
 
             $("body").append("<br/><br/><br/>")
 
-            createButton()
-            createButton()
+            createsubmit()
+            createsubmit()
 
-            $("#button-4,#button-5").on("click", alertUser)
+            $("#submit-4,#submit-5").on("click", alertUser)
+            */
+            let div_css = document.createElement("div")
+            div_css.setAttribute("id","div_css")
+            
+            let span = document.createElement("span") 
+            span.setAttribute('id','span_area')
+            span.textContent = "Span Initialized!"
 
-            $("body").append("<div></div>")
-            $("div").css({
+            
+            let link = document.createElement("a")
+            link.setAttribute("href","https://www.modulemedia.com") 
+            link.setAttribute("id","media_link") 
+            link.textContent = "Module Media"
+            
+            let textfield = document.createElement("input")
+            textfield.setAttribute('id',"focus_demo")
+            textfield.placeholder = "Test my focus!"
+
+            let form = document.createElement("form")
+            form.setAttribute("id","form-demo")
+            form.setAttribute('method','POST')
+            form.setAttribute('action','#')
+            
+            let nameInput = document.createElement("input")
+            nameInput.setAttribute('id','name')
+            nameInput.placeholder = "Enter Name"
+            nameInput.setAttribute('style','display:block;margin-top: 10px')
+            
+            let emailInput = document.createElement("input")
+            emailInput.setAttribute('id','email')
+            emailInput.placeholder = "Enter Email"
+            emailInput.setAttribute('style','display:block; margin-top: 10px')
+            
+            let submit = document.createElement("button")
+            submit.textContent = "Submit"
+            submit.setAttribute('id','submit')
+            submit.setAttribute('style','display:block;margin-top: 10px')
+
+            let form_elements = [nameInput,emailInput,submit]
+
+            for(let form_element of form_elements)
+            form.appendChild(form_element)
+            
+            let div_browser_size = document.createElement("div")
+            div_browser_size.setAttribute("id","browser_size")
+            div_browser_size.innerHTML = `Width : ${$(window).width()}px <br/> Height : ${$(window).height()}px`
+            
+            let elements = [form,div_css,span,div_browser_size,link,textfield]
+            
+            div_browser_size = $("#browser_size")
+
+            for(let element of elements)
+            $("body").append(element,"<br/><br/>")
+
+            $("#div_css").css({
                 "width": "400px",
                 "height": "400px",
                 "background-color": "blue",
             })
 
+            $("#browser_size").css({
+                    "color": "#CC1C0D",
+                    "border": "1px solid black",
+                    "padding": "3px 0px 3px 20px",
+                    "border-radius": "0px 5px 0px 5px",
+                    "background-color": "#DFE3E6",
+                    "margin" : "5px 0 5px 0",
+                    "width": "380px",
+            })
+
+            
+            $("#span_area").on("click",()=> {
+                $("#span_area").text("Span Clicked!") 
+            })
+            $("#span_area").on("mouseenter", ()=> {
+                $("#span_area").text("Mouse Entered Span!") 
+            })
+            $("#span_area").on("mouseleave",()=> {
+                $("#span_area").text("Mouse Left Span!") 
+            })
+
+        
+            $("#media_link").on('click', (event) => {
+                event.preventDefault();
+                $("#media_link").css({
+                    "color" : "red",
+                    "text-decoration" : "none"
+                })
+                console.log("Event ",event)
+                alert(`Node ${event.target} triggered the event`) // not sure which node is needed to be sent. Clarification needed
+            })  
+
+            /*
             $("div").on("click", () => {
                 alert("Div Clicked")
             })
@@ -54,17 +139,73 @@
             $("div").on("mouseleave", () => {
                 alert("Div Mouse Leave")
             })
+            */
+            $("body").append("<br/><br/><br/>")
+            
+            $(window).resize(function () {
+                let currentWindow = $(window)
+                console.log("Window resized to ",currentWindow.width(),currentWindow.height())
+                $("#browser_size").text(`Width: ${currentWindow.width()} Height: ${currentWindow.height()}`)
+            })
+
+            $("#focus_demo").focusin(() => {
+                $("#focus_demo").css({
+                    "background-color" : "lightgray"
+                })
+            })
+            
+            $("#focus_demo").focusout(() => {
+                $("#focus_demo").css({
+                    "background-color" : "white"
+                })
+            })
+
+        function resetInputs(){
+            $("#name").focusin(() => {
+                $("#name").css({
+                    "border" : "none"
+                })
+            })
+            $("#email").focusin(() => {
+                $("#email").css({
+                    "border" : "none"
+                })
+            })
+        }
+
+            $("#form-demo").on("submit",(event)=>{
+                event.preventDefault(); // remove this later.
+
+                let warn_css = {
+                    "border" : "1.5px solid red"
+                } 
+                let success_css = {
+                    "border" : "1.5px solid green"
+                }
+            
+                var validInput = true
+                var inputs = [$("#name"),$("#email")]
+                var errorMessage = ""
+                
+                for(let input of inputs)
+                if(input.val() == "")
+                {
+                    validInput = false
+                    input.css(warn_css)
+                    errorMessage += `*Required Field. Please ${input.attr('placeholder')} \n`
+                }else{
+                    input.css(success_css)
+                }
+                
+                if(validInput == false)
+                    alert(errorMessage)
+
+            })
+
+
+
         });
-
-        /*
-
-21.	Rewrite the code from number 5. This time add a span tag to the web page. Display three different messages within the span tag when the user enters the div, leaves the div, or clicks on the div.
-22.	Create a link within the web page and set it’s href attribute to browse to modulemedia.com. When the user clicks the link, first, prevent it from redirecting to that web site. Second, programmatically style the link so that its color changes to red. Third, display the name of the node that triggered the event within an alert box.
-23.	Create a div tag within the web page. As the user resizes the browser, display the width and height of the browser window within the div tag.
-24.	Create a text field using the <input> tag. When the input has focus, set the background to a light gray color. When the input does not have focus, reset the background back to a white color.
-25.	Add a form tag within a web page complete with 2 input fields: one that collects name and a second that collects an email. Add a submit button. When the user submits the form, if any one of the two fields is left empty, display an alert box to the user indicating that the fields are required. Give the field that the user left empty a red border. If both fields have values in them, set their borders to green.
-
-    */
+        
     </script>
 
 </head>
