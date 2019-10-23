@@ -6,148 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Practice with Jquery</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
+    <script src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
         $("document").ready(() => {
-            /*
+            
             var submitCount = 1;
 
-            function createsubmit() {
-                $("body").append(`<submit id=\'submit-${submitCount}'\> submit ${submitCount}</submit><br/>`)
-                submitCount += 1
-            }
-
-            function alertUser() {
-                alert("submit clicked!")
-            }
-
-            createsubmit()
-            $("#submit-1").click(alertUser)
-
-            createsubmit()
-            $("#submit-2").bind("click", alertUser)
-
-            createsubmit()
-            $("#submit-3").on("click", alertUser)
-
-            $("body").append("<br/><br/><br/>")
-
-            createsubmit()
-            createsubmit()
-
-            $("#submit-4,#submit-5").on("click", alertUser)
-            */
-            let div_css = document.createElement("div")
-            div_css.setAttribute("id","div_css")
+            while(submitCount <= 5)
+                createButton()
             
-            let span = document.createElement("span") 
-            span.setAttribute('id','span_area')
-            span.textContent = "Span Initialized!"
+            /* 16 ... 19 */
+            $("#button-1").click(alertUser)
+            $("#button-2").bind("click", alertUser)
+            $("#button-3").on("click", alertUser)
+            $("#button-4,#button-5").on("click", alertUser)
+            addDivider()
 
+            addAllElements()
             
-            let link = document.createElement("a")
-            link.setAttribute("href","https://www.modulemedia.com") 
-            link.setAttribute("id","media_link") 
-            link.textContent = "Module Media"
             
-            let textfield = document.createElement("input")
-            textfield.setAttribute('id',"focus_demo")
-            textfield.placeholder = "Test my focus!"
-
-            let form = document.createElement("form")
-            form.setAttribute("id","form-demo")
-            form.setAttribute('method','POST')
-            form.setAttribute('action','#')
-            
-            let nameInput = document.createElement("input")
-            nameInput.setAttribute('id','name')
-            nameInput.placeholder = "Enter Name"
-            nameInput.setAttribute('style','display:block;margin-top: 10px')
-            
-            let emailInput = document.createElement("input")
-            emailInput.setAttribute('id','email')
-            emailInput.placeholder = "Enter Email"
-            emailInput.setAttribute('style','display:block; margin-top: 10px')
-            
-            let submit = document.createElement("button")
-            submit.textContent = "Submit"
-            submit.setAttribute('id','submit')
-            submit.setAttribute('style','display:block;margin-top: 10px')
-
-            let form_elements = [nameInput,emailInput,submit]
-
-            for(let form_element of form_elements)
-            form.appendChild(form_element)
-            
-            let div_browser_size = document.createElement("div")
-            div_browser_size.setAttribute("id","browser_size")
-            div_browser_size.innerHTML = `Width : ${$(window).width()}px <br/> Height : ${$(window).height()}px`
-            
-            let elements = [form,div_css,span,div_browser_size,link,textfield]
-            
-            div_browser_size = $("#browser_size")
-
-            for(let element of elements)
-            $("body").append(element,"<br/><br/>")
-
+            // 20 ... 21
             $("#div_css").css({
                 "width": "400px",
                 "height": "400px",
                 "background-color": "blue",
             })
 
-            $("#browser_size").css({
-                    "color": "#CC1C0D",
-                    "border": "1px solid black",
-                    "padding": "3px 0px 3px 20px",
-                    "border-radius": "0px 5px 0px 5px",
-                    "background-color": "#DFE3E6",
-                    "margin" : "5px 0 5px 0",
-                    "width": "380px",
-            })
+            let events = {
+                "click" : "Clicked!",
+                "mouseenter" : "Mouse Entered!",
+                "mouseleave" : "Mouse Left!"
+            }, monitoredItems = [$("#div_css"),$("#span_area")], tags = ["Div","Span"]
 
-            
-            $("#span_area").on("click",()=> {
-                $("#span_area").text("Span Clicked!") 
-            })
-            $("#span_area").on("mouseenter", ()=> {
-                $("#span_area").text("Mouse Entered Span!") 
-            })
-            $("#span_area").on("mouseleave",()=> {
-                $("#span_area").text("Mouse Left Span!") 
-            })
+            var index = 0
 
-        
+            /*
+            Since we essentially monitor both elements, I put both in the loop.
+            If more elements are to be monitored this way they can simply be added in 
+            the monitored items array.
+            */
+
+            for(let item of monitoredItems)
+            {
+                jQuery.each(events, (event, message) => {
+                    let alert_msg = `${tags[index]} ${message}`
+                    if(tags[index] == "Div") // if its div throw alert
+                        item.on(event,() => {alert(alert_msg)})
+                    else
+                        item.on(event,() => {item.text(alert_msg)}) // if its span simply change text
+                    }
+                )
+                index++
+            }
+                
+            // 22
             $("#media_link").on('click', (event) => {
                 event.preventDefault();
                 $("#media_link").css({
                     "color" : "red",
-                    "text-decoration" : "none"
                 })
-                console.log("Event ",event)
-                alert(`Node ${event.target} triggered the event`) // not sure which node is needed to be sent. Clarification needed
+                alert(`Node ${event.target} triggered the event`) // TODO: not sure which node is needed to be sent. Clarification needed
             })  
 
-            /*
-            $("div").on("click", () => {
-                alert("Div Clicked")
-            })
-            $("div").on("mouseenter", () => {
-                alert("Div Mouse Enter")
-            })
-            $("div").on("mouseleave", () => {
-                alert("Div Mouse Leave")
-            })
-            */
-            $("body").append("<br/><br/><br/>")
-            
+            //23
             $(window).resize(function () {
                 let currentWindow = $(window)
                 console.log("Window resized to ",currentWindow.width(),currentWindow.height())
                 $("#browser_size").text(`Width: ${currentWindow.width()} Height: ${currentWindow.height()}`)
             })
-
+            //24
             $("#focus_demo").focusin(() => {
                 $("#focus_demo").css({
                     "background-color" : "lightgray"
@@ -160,32 +87,18 @@
                 })
             })
 
-        function resetInputs(){
-            $("#name").focusin(() => {
-                $("#name").css({
-                    "border" : "none"
-                })
-            })
-            $("#email").focusin(() => {
-                $("#email").css({
-                    "border" : "none"
-                })
-            })
-        }
-
+            // 25
             $("#form-demo").on("submit",(event)=>{
-                event.preventDefault(); // remove this later.
+                event.preventDefault(); // do we need this?
 
                 let warn_css = {
                     "border" : "1.5px solid red"
-                } 
-                let success_css = {
+                } , success_css = {
                     "border" : "1.5px solid green"
                 }
             
                 var validInput = true
-                var inputs = [$("#name"),$("#email")]
-                var errorMessage = ""
+                var inputs = [$("#name"),$("#email")], errorMessage = ""
                 
                 for(let input of inputs)
                 if(input.val() == "")
@@ -200,9 +113,106 @@
                 if(validInput == false)
                     alert(errorMessage)
 
+                // resetInputs()
             })
 
+        /* Simple utility functions below */
+        function resetInputs(){
 
+            // this function removes the error border when user re edits his entries. Not sure if its required
+            $("#name").focusin(() => {
+                $("#name").css({
+                    "border" : "none"
+                })
+            })
+            $("#email").focusin(() => {
+                $("#email").css({
+                    "border" : "none"
+                })
+            })
+        }
+            function addAllElements()
+            {
+                // adds most of the required elements for this assignment
+
+                let div_css = document.createElement("div")
+                div_css.setAttribute("id","div_css")
+            
+            let span = document.createElement("span") 
+                span.setAttribute('id','span_area')
+                span.textContent = "Span Initialized!"
+
+            let link = document.createElement("a")
+                link.setAttribute("href","https://www.modulemedia.com") 
+                link.setAttribute("id","media_link") 
+                link.textContent = "Module Media"
+            
+            let textfield = document.createElement("input")
+                textfield.setAttribute('id',"focus_demo")
+                textfield.placeholder = "Test my focus!"
+
+            let form = document.createElement("form")
+                form.setAttribute("id","form-demo")
+                form.setAttribute('method','POST')
+                form.setAttribute('action','#')
+            
+                let nameInput = document.createElement("input")
+                    nameInput.setAttribute('id','name')
+                    nameInput.placeholder = "Enter Name"
+                    nameInput.setAttribute('style','display:block;margin-top: 10px')
+                
+                let emailInput = document.createElement("input")
+                    emailInput.setAttribute('id','email')
+                    emailInput.placeholder = "Enter Email"
+                    emailInput.setAttribute('style','display:block; margin-top: 10px')
+                
+                let submit = document.createElement("button")
+                    submit.textContent = "Submit"
+                    submit.setAttribute('id','submit')
+                    submit.setAttribute('style','display:block;margin-top: 10px')
+
+            let form_elements = [nameInput,emailInput,submit]
+
+            for(let form_element of form_elements)
+                form.appendChild(form_element)
+
+            let div_browser_size = document.createElement("div")
+                div_browser_size.setAttribute("id","browser_size")
+                div_browser_size.innerHTML = `Width : ${$(window).width()}px <br/> Height : ${$(window).height()}px`
+            
+            let elements = [div_css,span,div_browser_size,link,textfield,form]
+            
+            for(let element of elements)
+            {
+                $("body").append(element,"<br/><br/>")
+                addDivider()
+            }
+            }
+        
+            function createButton() {
+                $("body").append(`<button id=\'button-${submitCount}'\> Button ${submitCount}</button><br/>`)
+                $(`#button-${submitCount}`).css({
+                    "margin": "5px 0 5px 0"
+                })
+                submitCount += 1
+            }
+
+            function alertUser() {
+                alert("Button clicked!")
+            }
+            function addDivider(){
+                $("body").append("<hr/>")
+            }
+
+            $("#browser_size").css({
+                    "color": "#CC1C0D",
+                    "border": "1px solid black",
+                    "padding": "3px 0px 3px 20px",
+                    "border-radius": "0px 5px 0px 5px",
+                    "background-color": "#DFE3E6",
+                    "margin" : "5px 0 5px 0",
+                    "width": "380px",
+            })
 
         });
         
