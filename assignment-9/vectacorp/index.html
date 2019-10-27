@@ -21,7 +21,7 @@
                     "background-color": "#DFE3E6"
                 })
             // 8...12
-            $("nav > ul > li").addClass("navigation")
+            $("nav > ul > li > a").addClass("navigation")
             $(".navigation").css({
                 "border": "1px solid #929CA4",
                 "color": "#CC1C0D",
@@ -30,8 +30,8 @@
             })
             // 13 ... 15
             $("main > section > p").removeAttr("class")
-            $("main > aside > p:nth-of-type(2)").append("<br/> Chevy Dealers Association")
-            $("main > aside > p:nth-of-type(1)").wrap("<q></q>")
+            $("main > aside > p:nth-of-type(2)").append("<br/>Chevy Dealers Association")
+            $("main > aside > p:nth-of-type(1)").wrapInner("<q></q>")
         })
     </script>
     <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
