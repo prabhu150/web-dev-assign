@@ -65,7 +65,8 @@
                 $("#media_link").css({
                     "color" : "red",
                 })
-                alert(`Node ${event.target} triggered the event`) // TODO: not sure which node is needed to be sent. Clarification needed
+                alert(`Node ${event.target.nodeName.toLowerCase()} triggered the event`) // TODO: not sure which node is needed to be sent. Clarification needed
+                
             })  
 
             //23
