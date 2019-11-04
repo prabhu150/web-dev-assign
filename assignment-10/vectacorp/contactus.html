@@ -8,18 +8,15 @@
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
 	
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-
-
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-
-	<script
-  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
-  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
-  crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./js/jq-smooth-scroll.js"></script>
+	<script src="./js/jquery.sticky.js"></script>
 
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script src="js/user-script.js"></script>
+
 </head>
 <body>
 	<main class="container">
@@ -57,26 +54,26 @@
 				<input type="email" name="email" maxlength="30" required="">
 			   
                 What VectaCorp products are you interested in?<br>
-			    <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect">vProspect 2.0</label>
-			    <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert">vConvert 2.0</label>
-			    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain 1.0</label>
-			    
+			    <label for="vProspect"><input type="checkbox" name="product" value="vProspect" id="vProspect" class="checkbox-and-radio">vProspect 2.0</label>
+			    <label for="vConvert"><input type="checkbox" name="product" value="vConvert" id="vConvert" class="checkbox-and-radio">vConvert 2.0</label>
+			    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain" class="checkbox-and-radio">vRetain 1.0</label>
+			    <br>
 			    <br>
 			    What is your current infrastructure?<br>
-			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
-			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
-			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
-			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
-
+			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac" class="checkbox-and-radio">Mac</label>
+			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux" class="checkbox-and-radio">Linux</label>
+			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix" class="checkbox-and-radio">Unix</label>
+			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows" class="checkbox-and-radio">Windows</label>
+				<br>
 			    <br>
-			    How many employees do you have?
-			    <select name="companysize">
+			    How many employees do you have? <br> 
+			    <select name="companysize" id='numEmployees'>
                     <option value="1-10">1-10</option>
                     <option value="11-100">11-100</option>
                     <option value="101-1000">101-1000</option>
                     <option value="More than 1000">More than 1000</option>
 		        </select>
-                
+                <br><br>
 			    How did you hear about us?
 			    <select name="hearaboutus" multiple="" size="5">
                     <option value="Magazine Ad">Magazine Ad</option>
@@ -88,7 +85,7 @@
                 
 			    Questions or comments for our sales representatives?
 			    <textarea name="questions" size="30" rows="5"></textarea>
-			    <input type="submit" name="submit" value="Submit Now">
+			    <button  name="submit" id="submitForm" > Submit </button>
 		    	</fieldset>
 			</form>
 	    </section>
