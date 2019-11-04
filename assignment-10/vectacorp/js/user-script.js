@@ -62,7 +62,7 @@ $('#solution-1-link').on('click', function () {
 
   $(".checkbox-and-radio").checkboxradio()
   $("#numEmployees").selectmenu()
-  // $("#submitForm").button()
+  $("#submitForm").button()
 
 
 });
