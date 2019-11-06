@@ -29,10 +29,25 @@
     padding : 10px;
     margin : 5px;
 }
-.carousel-caption > h2,p {
+.carousel-caption > p, .carousel-caption > h2 {
 text-shadow: 2.5px 1.5px 2.5px black;
 }
 
-.carousel-item > img {
+.quick-nav {
+    z-index: 5;
+}
 
+.solution-content {
+    position: relative;
+}
+
+.solution-back{
+    position: fixed;
+    min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
