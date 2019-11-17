@@ -41,7 +41,13 @@ text-shadow: 2.5px 1.5px 2.5px black;
 
 .solutions-content{
     margin-top : 20px;
-    height: 400px;
+    padding-left: 20px;
+    height: 300px;
     overflow-y: scroll;
-    position: relative;
 }
+
+.quick-nav {
+    margin-top: 20px;
+}
+
+
