@@ -1,0 +1,1 @@
+// Renders a form and a text box inside the form for search and filtering out our product list
