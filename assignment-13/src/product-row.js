@@ -5,13 +5,6 @@ import React,{Component} from 'react'
 
 class ProductRow extends Component {
     
-
-    constructor(props) {
-        super(props)
-        this.delete = this.delete.bind(this)
-        this.modify = this.modify.bind(this)
-    }
-
    delete = () => {
         let id = this.props.product.productId
         console.log("row",id)

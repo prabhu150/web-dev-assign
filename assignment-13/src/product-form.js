@@ -45,30 +45,23 @@ class ProductForm extends Component {
             product: Object.assign({}, RESET_VALUES), errors: {},
             selectedOption:"In Stock",
        }
-
-       this.completeForm = this.completeForm.bind(this)
-       this.onSubmit = this.onSubmit.bind(this)
-       this.onRadioChange = this.onRadioChange.bind(this)
-       this.onChange = this.onChange.bind(this)
-
     }
 
-    completeForm(productToModify) {
-        console.log("setting up new product for form")
-        this.setState({product : productToModify, action:"Update"});
+    populateForm(modifiedProduct) {
+        this.setState({product : modifiedProduct, action:"Update"});
     }
 
     onSubmit = (event) => {
         if(this.validateFields()) {
             
-            if(this.state.action === "Save") {
+            if(this.state.action === "Save") { // save new product
                 this.props.onSubmit(this.state.product);
             }
-            else if(this.state.action === "Update") {
+            else if(this.state.action === "Update") { // update existing ones
                 this.props.onUpdate(this.state.product)
             }
     
-            this.setState({
+            this.setState({ // reset form
                 product: Object.assign({}, RESET_VALUES), 
                 errors: {},
                 action:"Save"
@@ -115,7 +108,7 @@ class ProductForm extends Component {
         return (
             <div>
                 <h4>Add a new Product</h4>
-                <div className="col-md-6">
+                <div className="col-md-10">
                     <form> 
                         <div className="form-group">
                             <label htmlFor="productName">Name</label>

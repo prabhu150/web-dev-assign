@@ -9,12 +9,6 @@ import ProductRow from './product-row'
 
 class ProductTable extends Component {
     
-    constructor(props) {
-        super(props)
-        this.onDelete = this.onDelete.bind(this)
-        this.onModify = this.onModify.bind(this)
-    }
-    
     onDelete = (id) => {
         this.props.onDelete(id)
     }

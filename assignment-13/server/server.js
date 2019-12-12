@@ -25,7 +25,7 @@ mongoose.connect(DB_URL, {
     if(error != null)
     console.log("MONGO ERROR:", error);
 });
-
+// API Routes below
 app.get('/product/get/', async (req, res) => {
     var products = {};
     var data = await Product.find({});
@@ -39,7 +39,6 @@ app.post('/product/create/', async (req, res) => {
     try{
         var product = new Product(req.body);
         await product.save();
-        console.log("Saved");
         res.sendStatus(200);
     }catch (error) {
         res.sendStatus(500);

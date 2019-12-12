@@ -23,8 +23,6 @@ onDelete = (productId) => {
                   'Content-Type': 'application/json',
       }
   }).then(response => {console.log("Deletion successful!" ,response)}).catch(error =>{console.log(error)})
-
-
 }
 
 onUpdate = (updatedProduct) => {
@@ -55,11 +53,11 @@ onFilterChange = (filterInput) => {
 onSubmitForm = (newProduct) => {
   
   if (!newProduct.productId)
-  newProduct.productId = new Date().getTime()
+  newProduct.productId = new Date().getTime() // if product is newly created only then assign new id
 
   this.setState((prevState) => {
     var products = prevState.products
-    products[newProduct.productId] = newProduct
+    products[newProduct.productId] = newProduct // create new product or replace old one
     return { products }
   });
 
@@ -80,7 +78,7 @@ onSubmitForm = (newProduct) => {
 
 populateForm = (productId) => {
   let modifiedProduct = this.state.products[productId]
-  this.child.current.completeForm(modifiedProduct);
+  this.child.current.populateForm(modifiedProduct);
 }
 
 constructor(props) {
@@ -89,18 +87,11 @@ constructor(props) {
       products : {},
       filterText : ''
     }
-
-  this.onDelete = this.onDelete.bind(this)
-  this.onUpdate = this.onUpdate.bind(this)
-  this.onFilterChange = this.onFilterChange.bind(this)
-  this.onSubmitForm = this.onSubmitForm.bind(this)
-  this.populateForm = this.populateForm.bind(this)
   this.child = React.createRef();
 }
 
-
 componentDidMount() {
-  fetch('/product/get').then(data => data.json()).then(data =>{
+  fetch('/product/get').then(data => data.json()).then(data =>{ // show all products when screen loads
     this.setState({products:data})
     console.log("Setting state!")
   })
@@ -110,7 +101,7 @@ componentDidMount() {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-md-5">
+          <div className="col-md-10">
             <h3>My Inventory</h3>
             <Filter 
                 onFilter={this.onFilterChange}/>
