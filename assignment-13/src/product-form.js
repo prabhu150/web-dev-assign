@@ -75,7 +75,7 @@ class ProductForm extends Component {
     }
 
 
-    onRadioChange(newValue) {
+    onRadioChange = (newValue) => {
         this.setState({
             selectedOption: newValue.target.value
           });
